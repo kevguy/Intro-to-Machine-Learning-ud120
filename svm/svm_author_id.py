@@ -47,6 +47,14 @@ print 'Calculating accuracy'
 accuracy = accuracy_score(labels_test, pred)
 print 'Accuracy calculated, and the accuracy is', accuracy, '\n'
 
+### Count number of emails predicted that are belong to Chris
+count = 0
+for i in range(0, len(pred)):
+    if pred[i] == 1:
+        count = count + 1
+
+print 'number is ', count, '\n'
+
 ### predict 10, 26, 50th element of testing dataset
 ### assuming zero-indexed list
 sequence = [10, 26, 50]
