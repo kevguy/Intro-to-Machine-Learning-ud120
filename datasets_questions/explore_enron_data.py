@@ -21,3 +21,5 @@ enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "r")
 
 ### How many data points?
 print 'No. of data points is ', len(enron_data)
+### How many features?
+print 'No. of features is ', len(enron_data["SKILLING JEFFREY K"])
