@@ -32,6 +32,7 @@ for key in enron_data:
         count = count + 1
 
 print 'No. of POIs is ', count
+no_of_poi = count
 
 ### What is the total value of the stock belonging to James Prentice?
 for key in enron_data["PRENTICE JAMES"]:
@@ -67,3 +68,19 @@ for key in enron_data:
         count = count + 1
 print "People with known email address: ", count
 
+### How many people in the E+F dataset (as it currently exists) have "NaN" for their total payments? 
+### What percentage of people in the dataset as a whole is this?
+count = 0
+for key in enron_data:
+    if (math.isnan(float(enron_data[key]["total_payments"]))):
+        count = count + 1
+print "No of people have NaN for their total payments: ", count
+
+### How many POIs in the E+F dataset have "NaN" for their total payments? What percentage of POI's as a whole is this?
+count = 0
+for key in enron_data:
+    if (math.isnan(float(enron_data[key]["total_payments"]))):
+        if (enron_data[key]["poi"] == 1):
+            count = count + 1
+print "No. of POIs that have NaN for their total payments: ", count
+print no_of_poi
