@@ -21,5 +21,14 @@ enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "r")
 
 ### How many data points?
 print 'No. of data points is ', len(enron_data)
+
 ### How many features?
 print 'No. of features is ', len(enron_data["SKILLING JEFFREY K"])
+
+### How mant POIs?
+count = 0
+for key in enron_data:
+    if (enron_data[key]["poi"] == 1):
+        count = count + 1
+
+print 'No. of POIs is ', count
