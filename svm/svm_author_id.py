@@ -28,7 +28,7 @@ features_train = features_train[:len(features_train)/100]
 labels_train = labels_train[:len(labels_train)/100] 
 
 from sklearn.svm import SVC
-clf = SVC(kernel = 'linear')
+clf = SVC(kernel = 'rbf')
 print 'Training begins'
 t0 = time()
 clf.fit(features_train, labels_train)
