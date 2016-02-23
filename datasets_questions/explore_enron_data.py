@@ -19,4 +19,5 @@ import pickle
 
 enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "r"))
 
-
+### How many data points?
+print 'No. of data points is ', len(enron_data)
