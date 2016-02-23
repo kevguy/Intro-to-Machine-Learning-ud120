@@ -37,4 +37,7 @@ print 'No. of POIs is ', count
 for key in enron_data["PRENTICE JAMES"]:
     print key
 
-print enron_data["PRENTICE JAMES"]["total_stock_value"]
+print 'Stock value of James Prentice', enron_data["PRENTICE JAMES"]["total_stock_value"]
+
+### How many email messages do we have from Wesley Colwell to persons of interest?
+print 'No. of email messages from Wesley Colwell to POI is ', enron_data["COLWELL WESLEY"]["from_this_person_to_poi"]
