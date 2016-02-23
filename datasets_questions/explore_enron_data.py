@@ -32,3 +32,9 @@ for key in enron_data:
         count = count + 1
 
 print 'No. of POIs is ', count
+
+### What is the total value of the stock belonging to James Prentice?
+for key in enron_data["PRENTICE JAMES"]:
+    print key
+
+print enron_data["PRENTICE JAMES"]["total_stock_value"]
