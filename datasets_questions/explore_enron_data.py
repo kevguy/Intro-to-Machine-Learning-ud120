@@ -41,3 +41,13 @@ print 'Stock value of James Prentice', enron_data["PRENTICE JAMES"]["total_stock
 
 ### How many email messages do we have from Wesley Colwell to persons of interest?
 print 'No. of email messages from Wesley Colwell to POI is ', enron_data["COLWELL WESLEY"]["from_this_person_to_poi"]
+
+### What's the value of stock options exercised by Jeffrey Skilling?
+print 'Value of stock options exercised by Jeffrey Skilling is ', enron_data["SKILLING JEFFREY K"]["exercised_stock_options"]
+
+### Of these three individuals (Lay, Skilling and Fastow), 
+### who took home the most money (largest value of "total_payments" feature)? 
+### How much money did that person get?
+print 'Kenneth Lay: ', enron_data["LAY KENNETH L"]["total_payments"]
+print 'Jeffrey Skilling: ', enron_data["SKILLING JEFFREY K"]["total_payments"]
+print 'Andrew Fastow: ', enron_data["FASTOW ANDREW S"]["total_payments"]
