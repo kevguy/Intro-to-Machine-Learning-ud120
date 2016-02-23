@@ -45,7 +45,19 @@ print 'Prediction finishes'
 from sklearn.metrics import accuracy_score
 print 'Calculating accuracy'
 accuracy = accuracy_score(labels_test, pred)
-print 'Accuracy calculated, and the accuracy is', accuracy
+print 'Accuracy calculated, and the accuracy is', accuracy, '\n'
+
+### predict 10, 26, 50th element of testing dataset
+### assuming zero-indexed list
+sequence = [10, 26, 50]
+for i in range(0,3):
+    print 'Predicting ', sequence[i], 'th element'
+    pred2 = clf.predict([features_test[sequence[i]]])
+    print 'Prediction is ', pred2
+    print 'Real result is ', labels_test[sequence[i]]
+    print '\n'
+
+
 print 'Bye\n'
 #########################################################
 
