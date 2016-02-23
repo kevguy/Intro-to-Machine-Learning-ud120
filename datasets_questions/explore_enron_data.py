@@ -51,3 +51,19 @@ print 'Value of stock options exercised by Jeffrey Skilling is ', enron_data["SK
 print 'Kenneth Lay: ', enron_data["LAY KENNETH L"]["total_payments"]
 print 'Jeffrey Skilling: ', enron_data["SKILLING JEFFREY K"]["total_payments"]
 print 'Andrew Fastow: ', enron_data["FASTOW ANDREW S"]["total_payments"]
+
+### How many folks in this dataset have a quantified salary? What about a known email address?
+import pandas as pd
+import math
+count = 0
+for key in enron_data:
+    if not(math.isnan(float(enron_data[key]["salary"]))):
+        count = count + 1
+print "People with quantified salary: ", count
+
+count = 0
+for key in enron_data:
+    if (enron_data[key]["email_address"]!='NaN'):
+        count = count + 1
+print "People with known email address: ", count
+
