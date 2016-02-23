@@ -40,6 +40,15 @@ print 'Prediction finishes'
 print 'Calculating Accuracy'
 accuracy = accuracy_score(labels_test, pred)
 print 'The accuracy is ', accuracy
+
+
+'''
+data is organized into a numpy array where 
+the number of rows is the number of data points
+the number of columns is the number of features
+'''
+print 'no. of data points (no. of rows) is', len(features_train)
+print 'no. of features (no. of columns) is ', len(features_train[0])
 #########################################################
 
 
