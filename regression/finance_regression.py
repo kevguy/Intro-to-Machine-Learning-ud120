@@ -21,7 +21,8 @@ dictionary = pickle.load( open("../final_project/final_project_dataset_modified.
 
 ### list the features you want to look at--first item in the 
 ### list will be the "target" feature
-features_list = ["bonus", "salary"]
+### features_list = ["bonus", "salary"]
+features_list = ["bonus", "long_term_incentive"]
 data = featureFormat( dictionary, features_list, remove_any_zeroes=True)
 target, features = targetFeatureSplit( data )
 
@@ -41,13 +42,13 @@ from sklearn.linear_model import LinearRegression
 reg = LinearRegression()
 reg.fit(feature_train, target_train)
 
+### Find the slope and intercept
 print 'The slope is ', reg.coef_[0]
 print 'The intercept is ', reg.intercept_
 
-
-
-
-
+### Accuracy
+training_score = reg.score(feature_test, target_test)
+print 'Accuracy is ', training_score
 
 
 ### draw the scatterplot, with color-coded training and testing points
