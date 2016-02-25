@@ -33,6 +33,10 @@ reg.fit(ages_train, net_worths_train)
 print 'The slope is ', reg.coef_[0][0]
 print 'The intercept is ', reg.intercept_[0]
 
+### Calculate score
+score = reg.score(ages_test, net_worths_test)
+print 'The score is ', score
+
 
 
 
