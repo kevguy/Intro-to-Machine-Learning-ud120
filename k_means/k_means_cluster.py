@@ -93,3 +93,17 @@ for item in data_dict:
 
 print 'Minimum is ', min
 print 'Maximum is ', max
+
+### Task for finding the maximum and minimum values taken by "salary"
+min = 10000000000
+max = -10000000000
+for item in data_dict:
+    if data_dict[item]['salary'] != "NaN":
+        val = data_dict[item]['salary']
+        if min > val:
+            min = val
+        if max < val:
+            max = val
+
+print 'Minimum is ', min
+print 'Maximum is ', max
