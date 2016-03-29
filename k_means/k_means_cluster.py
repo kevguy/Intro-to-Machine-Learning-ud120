@@ -48,11 +48,27 @@ data_dict.pop("TOTAL", 0)
 ### can be any key in the person-level dictionary (salary, director_fees, etc.) 
 feature_1 = "salary"
 feature_2 = "exercised_stock_options"
-feature_3 = "total_payments"
 poi  = "poi"
-features_list = [poi, feature_1, feature_2, feature_3]
+features_list = [poi, feature_1, feature_2]
 data = featureFormat(data_dict, features_list )
 poi, finance_features = targetFeatureSplit( data )
+
+
+### Task: What would be the rescaled value of a "salary" feature that had an original value of $200,000, 
+### and an "exercised_stock_options" feature of $1 million?
+from sklearn.preprocessing import MinMaxScaler
+fake_data = data
+fake_data = numpy.append(fake_data, [[float(0), float(200000), float(1000000)]], 0)
+weights = numpy.array(fake_data)
+scaler = MinMaxScaler()
+rescaled_weights = scaler.fit_transform(weights)
+
+print rescaled_weights
+
+print "rescaled value of $200000 in feature 'salary'"
+print rescaled_weights[len(rescaled_weights)-1][1]
+print "rescaled value of $1000000 in feature 'exercised_stock_options'"
+print rescaled_weights[len(rescaled_weights)-1][2]
 
 
 
@@ -60,7 +76,7 @@ poi, finance_features = targetFeatureSplit( data )
 ### you'll want to change this line to 
 ### for f1, f2, _ in finance_features:
 ### (as it's currently written, the line below assumes 2 features)
-for f1, f2, f3 in finance_features:
+for f1, f2 in finance_features:
     plt.scatter( f1, f2 )
 plt.show()
 
