@@ -55,6 +55,7 @@ data = featureFormat(data_dict, features_list )
 poi, finance_features = targetFeatureSplit( data )
 
 
+
 ### in the "clustering with 3 features" part of the mini-project,
 ### you'll want to change this line to 
 ### for f1, f2, _ in finance_features:
@@ -77,3 +78,18 @@ try:
     Draw(pred, finance_features, poi, mark_poi=False, name="clusters.pdf", f1_name=feature_1, f2_name=feature_2)
 except NameError:
     print "no predictions object named pred found, no clusters to plot"
+
+
+### Task for finding maximum and minimum values taken by the "exercised_stock_options" feature used in this example
+min = 10000000000
+max = -10000000000
+for item in data_dict:
+    if data_dict[item]['exercised_stock_options'] != "NaN":
+        val = data_dict[item]['exercised_stock_options']
+        if min > val:
+            min = val
+        if max < val:
+            max = val
+
+print 'Minimum is ', min
+print 'Maximum is ', max
