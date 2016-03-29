@@ -60,7 +60,7 @@ for feature, target in zip(feature_train, target_train):
 
 ### labels for the legend
 plt.scatter(feature_test[0], target_test[0], color=test_color, label="test")
-plt.scatter(feature_test[0], target_test[0], color=train_color, label="train")
+plt.scatter(feature_train[0], target_train[0], color=train_color, label="train")
 
 
 
