@@ -88,3 +88,4 @@ clf = TfidfVectorizer(stop_words='english')
 clf.fit_transform(word_data)
 feature_names = clf.get_feature_names()
 print len(feature_names)
+print feature_names[34597]
