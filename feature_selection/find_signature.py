@@ -48,7 +48,7 @@ result = filter(lambda x: x > 0.2, feature_importances)
 result = max(feature_importances)
 print result
 print numpy.where(feature_importances==result)
-print feature_importances[33614]
+print feature_importances[14343]
 
 feature_names = vectorizer.get_feature_names()
-print feature_names[33614]
+print feature_names[14343]
