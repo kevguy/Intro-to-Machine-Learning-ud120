@@ -49,3 +49,6 @@ result = max(feature_importances)
 print result
 print numpy.where(feature_importances==result)
 print feature_importances[33604]
+
+import sklearn.feature_extraction.text.TfidfVectorizer 
+
