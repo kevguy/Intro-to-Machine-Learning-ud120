@@ -50,5 +50,5 @@ print result
 print numpy.where(feature_importances==result)
 print feature_importances[33614]
 
-#import sklearn.feature_extraction.text.TfidfVectorizer 
-
+feature_names = vectorizer.get_feature_names()
+print feature_names[33614]
