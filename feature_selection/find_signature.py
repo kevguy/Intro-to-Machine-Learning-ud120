@@ -43,5 +43,9 @@ clf = tree.DecisionTreeClassifier()
 clf = clf.fit(features_train, labels_train)
 print clf.score(features_test, labels_test)
 
-
-
+feature_importances = clf.feature_importances_
+result = filter(lambda x: x > 0.15, feature_importances)
+result = max(feature_importances)
+print result
+print numpy.where(feature_importances==result)
+print feature_importances[33604]
