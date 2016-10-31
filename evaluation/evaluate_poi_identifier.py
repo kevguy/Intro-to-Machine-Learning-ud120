@@ -40,13 +40,32 @@ print 'Accuracy'
 print clf.score(features_test, labels_test)
 
 # Finding the prediction result
-result = clf.predict(features_test)
+pred = clf.predict(features_test)
 
 # Filtering the POIs
-result = filter(lambda x: x==1, result)
+result = filter(lambda x: x==1, pred)
 
 # Find the number od POIs
 print 'Number of POIs predicted in testing set'
 result = reduce(lambda x,y: x+y, result)
 print result
 
+print 'Number of people in testing set'
+print len(labels_test)
+
+print 'Number of POIs in testing set'
+print reduce(lambda x,y: x+y, labels_test)
+
+from sklearn.metrics import confusion_matrix
+confusion_matrix = confusion_matrix(labels_test, pred)
+
+# Binary classification, the count of 
+# true negatives is C[0,0]
+# false negatives is C[1,0]
+# true positives is C[1,1]
+# false positives is C[0,1].
+print confusion_matrix
+print confusion_matrix[0,0]
+print confusion_matrix[1,0]
+print confusion_matrix[1,1]
+print confusion_matrix[0,1]
