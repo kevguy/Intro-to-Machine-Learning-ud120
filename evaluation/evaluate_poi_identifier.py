@@ -47,8 +47,8 @@ result = filter(lambda x: x==1, pred)
 
 # Find the number od POIs
 print 'Number of POIs predicted in testing set'
-result = reduce(lambda x,y: x+y, result)
-print result
+pred_result = reduce(lambda x,y: x+y, result)
+print pred_result
 
 print 'Number of people in testing set'
 print len(labels_test)
@@ -69,3 +69,11 @@ print confusion_matrix[0,0]
 print confusion_matrix[1,0]
 print confusion_matrix[1,1]
 print confusion_matrix[0,1]
+
+# Recall = true positives / actual yes
+print 'Recall'
+print float(confusion_matrix[1,1] / reduce(lambda x,y: x+y, labels_test))
+
+# Precision = true positives / predicted yes
+print 'Precision'
+print float(confusion_matrix[1,1] / pred_result)
