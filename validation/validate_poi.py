@@ -28,5 +28,22 @@ labels, features = targetFeatureSplit(data)
 
 
 ### it's all yours from here forward!  
+from sklearn import tree
 
+clf = tree.DecisionTreeClassifier()
+print 'Training starts'
+clf = clf.fit(features, labels)
+print 'Training finishes'
+
+print 'Accuracy'
+print clf.score(features, labels)
+
+#from sklearn.metrics import accuracy_score
+#print 'Beginning prediction'
+#pred = clf.predict(features_test)
+#print 'Prediction finishes'
+
+#print 'Calculating Accuracy'
+#accuracy = accuracy_score(labels_test, pred)
+#print 'The accuracy is ', accuracy
 
