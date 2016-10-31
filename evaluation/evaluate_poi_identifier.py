@@ -27,5 +27,26 @@ labels, features = targetFeatureSplit(data)
 
 
 ### your code goes here 
+from sklearn import tree
+from sklearn.cross_validation import train_test_split
+features_train, features_test, labels_train, labels_test = train_test_split(features, labels, test_size=0.3, random_state=42)
 
+clf = tree.DecisionTreeClassifier()
+print 'Training starts'
+clf = clf.fit(features_train, labels_train)
+print 'Training finishes'
+
+print 'Accuracy'
+print clf.score(features_test, labels_test)
+
+# Finding the prediction result
+result = clf.predict(features_test)
+
+# Filtering the POIs
+result = filter(lambda x: x==1, result)
+
+# Find the number od POIs
+print 'Number of POIs predicted in testing set'
+result = reduce(lambda x,y: x+y, result)
+print result
 
